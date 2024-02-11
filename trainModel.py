@@ -31,7 +31,7 @@ def TrainModel(epochs, train_loader, val_loader, criterion, optmizer, device):
             data, labels = data.to(device), labels.to(device)
             optmizer.zero_grad()
             outputs = model(data)
-            loss = criterion(outputs,labels)
+            loss = criterion(outputs, labels)
             loss.backward()
             optmizer.step()
             train_loss += loss.item()
